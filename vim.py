@@ -1,8 +1,6 @@
 from dragonfly import Key, MappingRule, Dictation, IntegerRef, Text
 
-import repeatt
-
-gvim_other_rule = MappingRule(
+class GVimOtherRule(MappingRule):
     name="gvim_tabulators",
     mapping={
         # window navigation commands
@@ -21,7 +19,7 @@ gvim_other_rule = MappingRule(
     },
     extras=[
     ]
-)
+
 
 gvim_navigation_rule = MappingRule(
     name="gvim_navigation",

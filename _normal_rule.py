@@ -2,7 +2,7 @@ from dragonfly import RuleRef, Repetition, CompoundRule, Dictation, IntegerRef, 
 
 import windowss
 import shared
-
+import vim
 import keystroke
 import letterRule
 
@@ -13,6 +13,7 @@ shared.keystroke = RuleRef(rule=keystroke.KeystrokeRule(), name='keystroke')
 shared.letter_sequence = Repetition(shared.letter, min=1, max=32, name='letter_sequence')
 import repeatt
 
+gvim_other_rule = vim.GVimOtherRule()
 # def executeLetter(letter):
 #     letter.execute()
 #
