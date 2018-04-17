@@ -2,7 +2,7 @@ from dragonfly import RuleRef, Repetition, CompoundRule, Dictation, IntegerRef, 
 
 import windowss
 import shared
-import vim
+import intellij
 import keystroke
 import letterRule
 
@@ -13,7 +13,6 @@ shared.keystroke = RuleRef(rule=keystroke.KeystrokeRule(), name='keystroke')
 shared.letter_sequence = Repetition(shared.letter, min=1, max=32, name='letter_sequence')
 import repeatt
 
-gvim_other_rule = vim.GVimOtherRule()
 # def executeLetter(letter):
 #     letter.execute()
 #
@@ -24,45 +23,14 @@ gvim_other_rule = vim.GVimOtherRule()
 
 # ---------------------------------------------------------------------------
 # NormalMode
-class VimKeystrokeRule(MappingRule):
-    exported = False
 
-    mapping = {
-        "bala [<n>]": Key("k:%(n)d"),
-        "poiin [<n>]": Key("j:%(n)d"),
-        "chap [<n>]": Key("h:%(n)d"),
-        "ross [<n>]": Key("l:%(n)d"),
-    }
-    extras = [
-        shared.letter,
-        shared.letter_sequence,
-        IntegerRef("n", 1, 100),
-        Dictation("text"),
-        Dictation("text2"),
-    ]
-    defaults = {
-        "n": 1,
-    }
-
-class NormalEnabler(CompoundRule):
-    spec = "vim"
-
-    def _process_recognition(self, node, extras):
-        # vimGrammar.disable()
-        print "vim enabled"
-
-
-class VimEnabler(CompoundRule):
-    spec = "vim"
-
+class IntellijEnabler(CompoundRule):
+    spec = "intelijey"
     def _process_recognition(self, node, extras):
         # normalGrammar.disable()
-        # vimGrammar.enable()
+        intellij.intelijGrammar.enable()
         print "vim disabled"
 
-#vimGrammar = Grammar("vim grammar")
-#vimGrammar.add_rule(NormalEnabler())
-# vimGrammar.load()
 
 
 
@@ -75,10 +43,9 @@ normalGrammar.add_rule(repeatt.RepeatRule())
 # normalGrammar.add_rule(WindowsKeyRule1())
 #normalGrammar.add_rule(WindowsKeyRule2())
 
-aa=windowss.WindowsKeyRule4()
-normalGrammar.add_rule(aa)
+normalGrammar.add_rule(windowss.WindowsKeyRule4())
 
-normalGrammar.add_rule(windowss.IntelijFixIt())
+
 
 # normalGrammar.add_rule(WindowsKeyRule3())
 
@@ -86,7 +53,7 @@ normalGrammar.add_rule(windowss.IntelijFixIt())
 # normalGrammar.add_rule(InsertModeCommands())
 # normalGrammar.add_rule(ExModeEnabler())
 # normalGrammar.add_rule(KeystrokeRule())
-# normalGrammar.add_rule(VimEnabler())
+normalGrammar.add_rule(IntellijEnabler())
 normalGrammar.load()
 print "grammer loaded"
 

@@ -50,12 +50,5 @@ class WindowsKeyRule4(MappingRule):
 #         Key("win:up").execute()
 
 
-class IntelijFixIt(CompoundRule):
-    spec = "fixi"
-    extras = []
 
-    def _process_recognition(self, node, extras):
-        Key("alt:down").execute()
-        Key("enter/2").execute()
-        Key("alt:up").execute()
 

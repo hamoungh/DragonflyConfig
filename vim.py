@@ -1,6 +1,8 @@
-from dragonfly import Key, MappingRule, Dictation, IntegerRef, Text
+from dragonfly import Key, MappingRule, Dictation, IntegerRef, Text, CompoundRule, Grammar
 
-class GVimOtherRule(MappingRule):
+import repeatt
+
+gvim_other_rule = MappingRule(
     name="gvim_tabulators",
     mapping={
         # window navigation commands
@@ -19,7 +21,7 @@ class GVimOtherRule(MappingRule):
     },
     extras=[
     ]
-
+)
 
 gvim_navigation_rule = MappingRule(
     name="gvim_navigation",
@@ -47,3 +49,16 @@ gvim_navigation_rule = MappingRule(
         IntegerRef("line", 1, 10000)
     ]
 )
+
+
+class NormalEnabler(CompoundRule):
+    spec = "vim"
+
+    def _process_recognition(self, node, extras):
+        vimGrammar.disable()
+        print "vim enabled"
+
+
+vimGrammar = Grammar("vim grammar")
+vimGrammar.add_rule(NormalEnabler())
+vimGrammar.load()
