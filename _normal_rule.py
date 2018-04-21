@@ -2,7 +2,6 @@ from dragonfly import RuleRef, Repetition, CompoundRule, Dictation, IntegerRef, 
 
 import windowss
 import shared
-import intellij
 import keystroke
 import letterRule
 
@@ -24,12 +23,12 @@ import repeatt
 # ---------------------------------------------------------------------------
 # NormalMode
 
-class IntellijEnabler(CompoundRule):
-    spec = "intelijey"
-    def _process_recognition(self, node, extras):
-        # normalGrammar.disable()
-        intellij.intelijGrammar.enable()
-        print "vim disabled"
+# class IntellijEnabler(CompoundRule):
+#     spec = "intelijey"
+#     def _process_recognition(self, node, extras):
+#         # normalGrammar.disable()
+#         intellij.intelijGrammar.enable()
+#         print "vim disabled"
 
 
 
@@ -53,7 +52,7 @@ normalGrammar.add_rule(windowss.WindowsKeyRule4())
 # normalGrammar.add_rule(InsertModeCommands())
 # normalGrammar.add_rule(ExModeEnabler())
 # normalGrammar.add_rule(KeystrokeRule())
-normalGrammar.add_rule(IntellijEnabler())
+# normalGrammar.add_rule(IntellijEnabler())
 normalGrammar.load()
 print "grammer loaded"
 
