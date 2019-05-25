@@ -6,7 +6,7 @@ class LetterRule(MappingRule):
     mapping = {
         'ach': Key('a', static=True),
         'bik': Key('b', static=True),
-        'caj': Key('c', static=True),
+        'kaj': Key('c', static=True),
         'daf': Key('d', static=True),
         'ish': Key('e', static=True),
         'fick': Key('f', static=True),
@@ -58,7 +58,7 @@ class LetterRule(MappingRule):
         'bar': Key('bar'),
         'cart': Key('caret'),
         'colx': Key('colon'),
-        'kuch': Key('comma'),
+        'kooch': Key('comma'),
         'dollar': Key('dollar'),
         '(dot|period)': Key('dot'),
         'duote': Key('dquote'),
@@ -69,7 +69,7 @@ class LetterRule(MappingRule):
         'mice': Key('minus'),
         'pers': Key('percent'),
         'pulse': Key('plus'),
-        'qest': Key('question'),
+        'kess': Key('question'),
         # Getting Invalid key name: 'semicolon'
         # 'semic': Key('semicolon'),
         'sash': Key('slash'),

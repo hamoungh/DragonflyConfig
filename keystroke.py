@@ -1,5 +1,5 @@
 
-from dragonfly import MappingRule, Key, Mimic, IntegerRef, Dictation, RuleRef
+from dragonfly import MappingRule, Key, Mimic, IntegerRef, Dictation, RuleRef, Text, Mouse
 
 
 class KeystrokeRule(MappingRule):
@@ -20,6 +20,7 @@ class KeystrokeRule(MappingRule):
         "end": Key("end"),
         "doc home": Key("c-home"),
         "doc end": Key("c-end"),
+        "follow": Key("ctrl:down") + Mouse("left") + Key("ctrl:up"),
 
         #	"soot": 						Key("escape"),
         #	"[<n>] joot":                      release + Key("space/2:%(n)d"),
@@ -33,6 +34,7 @@ class KeystrokeRule(MappingRule):
         "pinj": release + Key("c-v"),
         "duplicate <n>": release + Key("c-c, c-v:%(n)d"),
         "copy": release + Key("c-c"),
+        "thatsy": release + Key("c-c"),
         "cut": release + Key("c-x"),
         "select all": release + Key("c-a"),
         #   "[hold] appsj":                     Key("apps:down"),
@@ -45,6 +47,7 @@ class KeystrokeRule(MappingRule):
         "altup": Key("alt:up"),
         "release [all]": release,
         "tux": Key("c-a"),
+        "amplify": Key("c-plus"),
 
         #     "say <text>":                       release + Text("%(text)s"),
         "mimic <text>": release + Mimic(extra="text"),
@@ -63,7 +66,9 @@ class KeystrokeRule(MappingRule):
         "efdavazdah": Key("f12"),
         "efsizdah": Key("f13"),
         "efcharda": Key("f14"),
-        "efpoonza": Key("f15")
+        "efpoonza": Key("f15"),
+        "inteli jey": Text("intellij")
+
 
     }
     extras = [

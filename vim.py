@@ -53,12 +53,13 @@ gvim_navigation_rule = MappingRule(
 
 class NormalEnabler(CompoundRule):
     spec = "vim"
-
     def _process_recognition(self, node, extras):
         vimGrammar.disable()
         print "vim enabled"
 
 
+
 vimGrammar = Grammar("vim grammar")
 vimGrammar.add_rule(NormalEnabler())
 vimGrammar.load()
+
