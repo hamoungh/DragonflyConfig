@@ -4,7 +4,7 @@ import natlink
 
 config = Config("snore");
 config.lang = Section("Language section");
-config.lang.snore = Item("snore", doc="Put the microphone to sleep")
+config.lang.snore = Item("esnore", doc="Put the microphone to sleep")
 
 
 class SnoreRule(CompoundRule):

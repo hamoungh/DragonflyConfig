@@ -53,7 +53,7 @@ def format_dotword(dictation):
 def format_upper_score(dictation):
     text = str(dictation)
     words = [word.upper() for word in text.split(" ")]
-    print words
+    print(words)
     Text("_".join(words)).execute()
 
 
@@ -67,7 +67,6 @@ def format_jive(dictation):
 def format_java_method(dictation):
     text = str(dictation)
     words = text.split(" ")
-    print words[0].lower()
     Text(words[0].lower() + "".join(w.capitalize() for w in words[1:])).execute()
 
 

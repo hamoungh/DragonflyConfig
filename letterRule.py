@@ -1,4 +1,4 @@
-from dragonfly import MappingRule, Key
+from dragonfly import MappingRule, Key, Text
 
 
 class LetterRule(MappingRule):
@@ -66,16 +66,15 @@ class LetterRule(MappingRule):
         'bang': Key('exclamation'),
         'sharp': Key('hash'),
         'hyph': Key('hyphen'),
-        'mice': Key('minus'),
         'pers': Key('percent'),
         'pulse': Key('plus'),
         'kess': Key('question'),
         # Getting Invalid key name: 'semicolon'
-        # 'semic': Key('semicolon'),
+        'semi': Text(";"),
         'sash': Key('slash'),
 
         'tilde': Key('tilde'),
-        'zoore': Key('underscore'),
+        'zoor': Key('underscore'),
         # 'escape':Key('escape'),
         'langle': Key('langle'),
         'lace': Key('lbrace'),
