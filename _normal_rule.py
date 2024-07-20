@@ -9,7 +9,6 @@ import shared
 import _intellij
 import _vscode
 
-from repeatt import RepeatRule
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -18,6 +17,7 @@ logger = logging.getLogger("dragonfly.ide_context")
 shared.letter = RuleRef(rule=LetterRule(), name='letter')
 shared.keystroke = RuleRef(rule=KeystrokeRule(), name='keystroke')
 shared.letter_sequence = Repetition(shared.letter, min=1, max=32, name='letter_sequence')
+from repeatt import RepeatRule
 
 class IDEContext(MappingRule):
     def __init__(self):
